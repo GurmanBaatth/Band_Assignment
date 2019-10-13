@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var morgan = require("morgan");
 var db = require("./database");
-var bandArray = [{}];
+
 app.use(morgan("dev"));
 app.use("/", express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +44,7 @@ var sessionChecker = (req, res, next) => {
 
 app.post("/register", function(req, res) {
   try {
-    db.registerUser(req.body.email, req.body.password, bandArray);
+    db.registerUser(req.body.email, req.body.password);
     res.redirect("/login");
   } catch (e) {
     res.sendStatus(404);
@@ -53,37 +53,31 @@ app.post("/register", function(req, res) {
 
 app.get("/login", sessionChecker, (req, res) => {
   res.sendFile(__dirname + "/public/login.html");
-  res.redirect("/login");
+  // res.redirect("/login");
 });
 
-app
-  .route("/login")
-  .get(sessionChecker, (req, res) => {
-    res.sendFile(__dirname + "/public/login.html");
-  })
-  .post((req, res) => {
-    db.Login(req.body.email, req.body.password, function(users) {
-      if (!users) {
-        res.redirect("/login");
-      } else if (!users.password) {
-        res.redirect("/login");
-      } else {
-        req.session.user = users;
-        console.log("session:", req.session.user);
-        console.log("cookies:", req.cookies.user_sid);
-        sessionUser = req.session.user;
-        console.log(sessionUser)
+app.post("/login", (req, res) => {
+  db.Login(req.body.email, req.body.password, function(users) {
+    if (!users) {
+      res.redirect("/login");
+    } else if (users.password != req.body.password) {
+      res.redirect("/login");
+    } else {
+      req.session.user = users;
+      console.log("session:", req.session.user);
+      console.log("cookies:", req.cookies.user_sid);
+      sessionUser = req.session.user;
+      console.log(sessionUser);
 
-        res.redirect(301, "/dashBoard");
-      }
-    });
+      res.redirect("/dashBoard");
+    }
   });
+});
 
 app.get("/dashBoard", (req, res) => {
   if (sessionUser || req.cookies.user_sid) {
     db.getTask(sessionUser._id, function(result) {
       tasks = result;
-      res.send(tasks);
       console.log(tasks);
     });
     res.sendFile(__dirname + "/public/dashBoard.html");
@@ -98,8 +92,8 @@ app.post("/add", function(req, res) {
 
       res.send({ _id: insertedIds, a: req.body.todo });
       console.log(insertedIds);
-         });
-      } catch (e) {
+    });
+  } catch (e) {
     console.log(e);
     res.sendStatus(200);
   }
@@ -150,13 +144,13 @@ app.post("/update", function(req, res) {
     console.log("enable to update");
   }
 });
-app.get('/logout', (req, res) => {
+app.get("/logout", (req, res) => {
   if (req.session.user && req.cookies.user_sid) {
-      res.clearCookie('user_sid');
-      tasks=[];
-      res.redirect('/');
+    res.clearCookie("user_sid");
+    tasks = [];
+    res.redirect("/");
   } else {
-      res.redirect('/login');
+    res.redirect("/login");
   }
 });
 
