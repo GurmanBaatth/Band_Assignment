@@ -182,20 +182,6 @@
   }
 
   function getArray() {
-    // fetch(`/dashBoard`, { mode: "no-cors" }).then(function(data) {
-    //     if (data.status != 200) {
-    //       console.error("Internal Server Error");
-    //       return;
-    //     }
-    //     return data.json().then(function(d) {
-    //       console.log(d);
-    //       store=[];
-    //       store = d;
-    //       store.forEach(function(i) {
-    //         display(i);
-    //       });
-    //     });
-    //   });
     fetch(`/data`, { mode: "no-cors" }).then(function(data) {
       if (data.status != 200) {
         console.error("Internal Server Error");
@@ -203,7 +189,7 @@
       }
       return data.json().then(function(d) {
         console.log(d);
-        store=[];
+        store = [];
         store = d;
         store.forEach(function(i) {
           display(i);
