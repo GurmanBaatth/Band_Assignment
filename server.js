@@ -75,7 +75,7 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/dashBoard", (req, res) => {
-  if (sessionUser || req.cookies.user_sid) {
+  if (sessionUser && req.cookies.user_sid) {
     db.getTask(sessionUser._id, function(result) {
       tasks = result;
       console.log(tasks);
@@ -147,6 +147,7 @@ app.post("/update", function(req, res) {
 app.get("/logout", (req, res) => {
   if (req.session.user && req.cookies.user_sid) {
     res.clearCookie("user_sid");
+    req.session.destroy();
     tasks = [];
     res.redirect("/");
   } else {
