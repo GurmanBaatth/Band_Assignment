@@ -1,128 +1,126 @@
 header {
-    color: rgb(23, 65, 65);
-    padding: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: transparent;
-    padding: 10px;
-    color: darkorange;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  color: rgb(23, 65, 65);
+  padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: transparent;
+  padding: 10px;
+  color: darkorange;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
 }
 
 #container {
-    margin: 0 auto;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(82, 80, 80, 0.75); 
+  margin: 0 auto;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(82, 80, 80, 0.75); 
     box-shadow: 1px 2px 13px 7px rgba(71, 71, 71, 0.75); */
-    max-width: 900px;
-    box-sizing: border-box;
-    
-
+  max-width: 900px;
+  box-sizing: border-box;
 }
 
-.emailDiv{
-    border: 1px solid black;
-    box-sizing: border-box;
-    width: 30%;
-    height: 50px;
-    font-size: 20px;
-    position: relative;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    
-    margin-left: 5px;
+.emailDiv {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 30%;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+
+  margin-left: 5px;
 }
-.buttonDiv{
-    position: relative;
-    height: 50px;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-  
-    margin-left: 15px;
-    cursor: pointer;
-    color: white;
-    border: none;
-    margin-top: 10px
+.buttonDiv {
+  position: relative;
+  height: 50px;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+
+  margin-left: 15px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  margin-top: 10px;
 }
-.emailBox{
-    border: 1px solid black;
-    box-sizing: border-box;
-    width: 98%;
-    height: 50px;
-    font-size: 20px;
-    position: relative;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    margin-left: 5px;
+.emailBox {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 98%;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  margin-left: 5px;
 }
-.passwordBox{
-    border: 1px solid black;
-    box-sizing: border-box;
-    width: 98%;
-    height: 50px;
-    font-size: 20px;
-    position: relative;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    margin-left: 5px;
+.passwordBox {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 98%;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  margin-left: 5px;
 }
 #inp {
-    
-    border: 1px solid black;
-    box-sizing: border-box;
-    width: 92%;
-    height: 50px;
-    font-size: 20px;
-    position: relative;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    margin-left: 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 92%;
+  height: 50px;
+  font-size: 20px;
+  position: relative;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  margin-left: 5px;
 }
 
 /* #box1 {} */
-#navigationbtn{
-    position: relative;
-    height: 50px;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    margin-left: 15px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    border: none;
-    float:right;
+#navigationbtn {
+  position: relative;
+  height: 50px;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  margin-left: 15px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  float: right;
 }
 
 #btn {
-    position: relative;
-    height: 50px;
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    margin-left: 15px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    border: none;
+  position: relative;
+  height: 50px;
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  margin-left: 15px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
 }
 
 #btn.hover {
-    background-color: black;
-    color: white;
-    transition: 0.8s;
+  background-color: black;
+  color: white;
+  transition: 0.8s;
 }
 
 #content {
-    box-sizing: border-box;
-    background-color: rgb(182, 69, 69);
-    opacity: .9;
+  box-sizing: border-box;
+  background-color: rgb(182, 69, 69);
+  opacity: 0.9;
 }
 
 #list {
-    /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
-    box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
-    font-size: 20px;
-    box-sizing: border-box;
-    color: yellowgreen;
-    /* word-wrap:break-word; */
+  /* webkit-box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75); */
+  box-shadow: 1px 2px 13px 7px rgba(0, 0, 0, 0.75);
+  font-size: 20px;
+  box-sizing: border-box;
+  color: yellowgreen;
+  /* word-wrap:break-word; */
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blog.hubspot.com/hubfs/To_Do_List.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://cdn.vox-cdn.com/thumbor/B_3i_xBuhlX_lq_WyKRA31YQwrM=/0x0:5760x3840/1820x1024/filters:focal(2420x1930:3340x2850):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/56578693/akrales_170907_1974_0026_02.1504880732.jpg");
 }
