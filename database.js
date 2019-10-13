@@ -4,7 +4,6 @@ const url = `mongodb+srv://GurmanBatth:gurman@cluster0-5gvn8.mongodb.net/test?re
 let collection = "";
 let collectionBand = "";
 const dbname = "Todo";
-let band
 
 function connect() {
   mongoDb.connect(
@@ -16,19 +15,18 @@ function connect() {
       const db = client.db(dbname);
       collection = db.collection("user");
       collectionBand = db.collection("Band");
-      
     }
   );
 }
-function registerUser(email, password,bandArray) {
-  collection.insertOne({ email: email, password: password,band:bandArray }, function(
+function registerUser(email, password) {
+  collection.insertOne({ email: email, password: password }, function(
     err,
     result
   ) {
     if (!err) {
       console.log(result);
-    }else{
-    console.log(result);
+    } else {
+      console.log(result);
     }
   });
 }
@@ -40,13 +38,16 @@ function Login(email, password, callback) {
     }
   });
 }
-function insertDocs(tasks,user, cb) {
-  collectionBand.insertOne({ a: tasks,user:new mongodb.ObjectID(user)}, function(err, result) {
-    if (!err) {
-      console.log(result);
-      cb(result.insertedId);
+function insertDocs(tasks, user, cb) {
+  collectionBand.insertOne(
+    { a: tasks, user: new mongodb.ObjectID(user) },
+    function(err, result) {
+      if (!err) {
+        console.log(result);
+        cb(result.insertedId);
+      }
     }
-  });
+  );
 }
 function deleteDocs(index, func) {
   collectionBand.deleteOne({ _id: new mongodb.ObjectID(index) }, function(
@@ -75,10 +76,12 @@ function update(index, val, funct) {
     }
   );
 }
-function getTask(user,items) {
-  collectionBand.find({user:new mongodb.ObjectID(user)}).toArray(function(err, result) {
-    items(result);
-  });
+function getTask(user, items) {
+  collectionBand
+    .find({ user: new mongodb.ObjectID(user) })
+    .toArray(function(err, result) {
+      items(result);
+    });
 }
 module.exports = {
   connect,
