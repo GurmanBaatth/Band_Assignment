@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +10,27 @@
   <body>
     <div id="Container">
       <h1>Register</h1>
-      <div class="emailDiv">
-        <input class="emailBox" type="text" placeholder="Email" />
-      </div>
-      <div class="emailDiv">
-        <input class="passwordBox" type="password" placeholder="Password" />
-      </div>
-      <div class="buttonDiv">
-       <a href="/login.html"><button class="registerButton">Register</button></a> 
-      </div>
+      <form action="/register" method="Post">
+        <div class="emailDiv">
+          <input
+            class="emailBox"
+            name="email"
+            type="text"
+            placeholder="Email"
+          />
+        </div>
+        <div class="emailDiv">
+          <input
+            class="passwordBox"
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="buttonDiv">
+          <button class="registerButton">Register</button>
+        </div>
+      </form>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
