@@ -10,17 +10,27 @@
   <body>
     <div id="container">
       <h1>Log In</h1>
-      <div class="emailDiv">
-        <input class="emailBox" type="text" placeholder="Email" />
-      </div>
-      <div class="emailDiv">
-        <input class="passwordBox" type="password" placeholder="Password" />
-      </div>
-      <div class="buttonDiv">
-        <a href='dashBoard.html'><button class="signInButton">Log In</button></a>
-      </div>
+      <form action="/login" method="POST">
+        <div class="emailDiv">
+          <input
+            class="emailBox"
+            name="email"
+            type="text"
+            placeholder="Email"
+          />
+        </div>
+        <div class="emailDiv">
+          <input
+            class="passwordBox"
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="buttonDiv">
+          <button class="signInButton">Log In</button>
+        </div>
+      </form>
     </div>
-    <script src="loginScript.js"></script>
-    
   </body>
 </html>
